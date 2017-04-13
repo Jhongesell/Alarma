@@ -1,0 +1,272 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.04.04
+# ---------------------------------------------------------------------------
+PROJECT = Clock.exe
+OBJFILES = Clock.obj princip.obj ..\libreria\Tiempo.obj ..\libreria\Cadenas.obj \
+  ..\libreria\Man_arch.obj ..\libreria\FORMAS\Acercade.obj \
+  ..\libreria\FORMAS\TASCII.obj ..\libreria\FORMAS\Calend.obj \
+  ..\libreria\Fechas.obj ..\libreria\FORMAS\Calculad.obj ..\libreria\Evaexpc.obj \
+  ..\libreria\Calnpol.obj ..\libreria\Ana_exp.obj ..\libreria\Pila.obj \
+  ..\libreria\formas\Cronomet.obj ..\libreria\formas\Ayuda.obj \
+  ..\Libreria\formas\Editor.obj ..\libreria\formas\Alarma\AlarmVis.obj \
+  ..\libreria\formas\Alarma\AlarmCap.obj ..\libreria\formas\Lmensaje.obj \
+  ..\Libreria\formas\ALARMA\aviso.obj ..\Libreria\formas\director\Director.obj \
+  ..\Libreria\formas\director\Vdirect.obj \
+  ..\Libreria\formas\Pendient\Vpendien.obj ..\Libreria\formas\Pendient\Cpendien.obj \
+  ..\libreria\formas\CPasword.obj ..\Libreria\formas\CNPaswor.obj \
+  ..\libreria\formas\ArbMemo\ArbMemo.obj ..\libreria\formas\FCap1.obj \
+  ..\libreria\Nucleo.obj Config.obj ..\Libreria\formas\Notas.obj \
+  ..\Libreria\ClavSeg.obj ..\Libreria\formas\2D\Vgrafica.obj \
+  ..\Libreria\formas\2D\Graf2d.obj ..\Libreria\formas\2D\CDim2D.obj \
+  ..\Libreria\fechora.obj ..\Libreria\formas\agenda\Agenda.obj \
+  ..\Libreria\formas\agenda\Cagenda.obj ..\Libreria\formas\agenda\RepAgen.obj \
+  ..\Libreria\formas\Pendient\RepPend.obj ..\Libreria\ctrl_l_a.obj \
+  ..\Libreria\formas\director\RepDir.obj ..\Libreria\formas\Diario\VDiario.obj \
+  ..\Libreria\Reconoc.obj ..\Libreria\formas\cclavseg.obj
+RESFILES = Clock.res
+DEFFILE =
+RESDEPEN = $(RESFILES) princip.dfm ..\libreria\formas\Alarma\AlarmVis.dfm Config.dfm
+LIBFILES =
+IDLGENFILES =
+IDLFILES =
+LIBRARIES = QRPT40.lib nmfast40.lib vcldb40.lib dclocx40.lib vclx40.lib bcbsmp40.lib \
+  vcl40.lib
+SPARELIBS = vcl40.lib bcbsmp40.lib vclx40.lib dclocx40.lib vcldb40.lib nmfast40.lib \
+  QRPT40.lib
+PACKAGES = vclx40.bpi vcl40.bpi vcldb40.bpi vcldbx40.bpi bcbsmp40.bpi dclocx40.bpi \
+  qrpt40.bpi teeui40.bpi vclsmp40.bpi teedb40.bpi tee40.bpi ibsmp40.bpi \
+  nmfast40.bpi inetdb40.bpi inet40.bpi
+# ---------------------------------------------------------------------------
+PATHCPP = .;..\libreria;..\libreria\FORMAS;..\libreria\formas\Alarma;..\Libreria\formas\director;..\Libreria\formas\Pendient;..\libreria\formas\ArbMemo;..\Libreria\formas\2D;..\Libreria\formas\agenda;..\Libreria\formas\Diario
+PATHPAS = .;
+PATHASM = .;
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+SYSDEFINES = NO_STRICT
+USERDEFINES = _IDIOMA_ESPANOL_
+# ---------------------------------------------------------------------------
+CFLAG1 = -I..\Libreria\formas\Diario;"C:\Archivos de programa\Borland\CBuilder4\Projects\";..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;"c:\archivos de programa\borland\cbuilder3\projects\";..\libreria;$(BCB)\include;$(BCB)\include\vcl \
+  -O2 -Hc -H=$(BCB)\lib\vcl40.csm -w -Ve -Tkh30000 -a8 -4 -d -k- -vi \
+  -D$(SYSDEFINES);$(USERDEFINES) -c -b- -w-par -w-inl -Vx -tW -tWM
+CFLAG2 =
+CFLAG3 =
+IDLCFLAGS = -I..\Libreria\formas\Diario \
+  -I"C:\Archivos de programa\Borland\CBuilder4\Projects\" \
+  -I..\Libreria\formas\agenda -I..\libreria\formas\2d \
+  -I..\libreria\formas\arbmemo -I..\libreria\formas\pendient \
+  -I..\libreria\formas\director -I..\libreria\formas\directo \
+  -I..\libreria\formas\direct -I..\libreria\formas\direc \
+  -I..\libreria\formas\dire -I..\libreria\formas\dir -I..\libreria\formas\di \
+  -I..\libreria\formas\d -I..\libreria\formas -I..\libreria\formasf\alarma \
+  -I..\libreria\formas\alarma \
+  -I"c:\archivos de programa\borland\cbuilder3\projects\" -I..\libreria \
+  -I$(BCB)\include -I$(BCB)\include\vcl -src_suffixcpp -D_IDIOMA_ESPANOL_
+PFLAGS = -U..\Libreria\formas\Diario;"C:\Archivos de programa\Borland\CBuilder4\Projects\";..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;"c:\archivos de programa\borland\cbuilder3\projects\";..\libreria;$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -I..\Libreria\formas\Diario;"C:\Archivos de programa\Borland\CBuilder4\Projects\";..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;"c:\archivos de programa\borland\cbuilder3\projects\";..\libreria;$(BCB)\include;$(BCB)\include\vcl \
+  -D_IDIOMA_ESPANOL_ -$Y- -$L- -$D- -v -M -JPHNE
+RFLAGS = -i..\Libreria\formas\Diario;"C:\Archivos de programa\Borland\CBuilder4\Projects\";..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;"c:\archivos de programa\borland\cbuilder3\projects\";..\libreria;$(BCB)\include;$(BCB)\include\vcl \
+  -D_IDIOMA_ESPANOL_
+AFLAGS = /i..\Libreria\formas\Diario \
+  /i"C:\Archivos de programa\Borland\CBuilder4\Projects\" \
+  /i..\Libreria\formas\agenda /i..\libreria\formas\2d \
+  /i..\libreria\formas\arbmemo /i..\libreria\formas\pendient \
+  /i..\libreria\formas\director /i..\libreria\formas\directo \
+  /i..\libreria\formas\direct /i..\libreria\formas\direc \
+  /i..\libreria\formas\dire /i..\libreria\formas\dir /i..\libreria\formas\di \
+  /i..\libreria\formas\d /i..\libreria\formas /i..\libreria\formasf\alarma \
+  /i..\libreria\formas\alarma \
+  /i"c:\archivos de programa\borland\cbuilder3\projects\" /i..\libreria \
+  /i$(BCB)\include /i$(BCB)\include\vcl /d_IDIOMA_ESPANOL_ /mx /w2 /zn
+LFLAGS = -L..\Libreria\formas\Diario;"C:\Archivos de programa\Borland\CBuilder4\Projects\";..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;"c:\archivos de programa\borland\cbuilder3\projects\";..\libreria;$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -aa -Tpe -x -Gn -w
+IFLAGS =
+# ---------------------------------------------------------------------------
+ALLOBJ = c0w32.obj sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib
+# ---------------------------------------------------------------------------
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=3
+Debug=0
+PreRelease=1
+Special=0
+Private=0
+DLL=0
+Locale=2058
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Sistemas Tlacoyotzin
+FileDescription=Alarma y Utilerias Varias
+FileVersion=1.0.0.3
+InternalName=
+LegalCopyright=Registro en trámite
+LegalTrademarks=Registro en trámite
+OriginalFilename=Cloc.exe
+ProductName=Alarma
+ProductVersion=Versión de Prueba
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=13
+Item0=..\Libreria\formas\Diario;C:\Archivos de programa\Borland\CBuilder4\Projects\;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item1=..\Libreria\formas\Diario;C:\Archivos de programa\Borland\CBuilder4\Projects;C:\Archivos de programa\Borland\CBuilder4\Projects\;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item2=C:\Archivos de programa\Borland\CBuilder4\Projects\;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item3=C:\Archivos de programa\Borland\CBuilder4\Projects;C:\Archivos de programa\Borland\CBuilder4\Projects\;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item4=C:\Archivos de programa\Borland\CBuilder4\Projects;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item5=..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item6=..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas\;..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item7=..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas\;..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item8=..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas\;..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item9=..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas\;..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item10=..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item11=..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\include;$(BCB)\include\vcl
+Item12=c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=13
+Item0=..\Libreria\formas\Diario;C:\Archivos de programa\Borland\CBuilder4\Projects\;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\Libreria\formas\Diario;C:\Archivos de programa\Borland\CBuilder4\Projects;C:\Archivos de programa\Borland\CBuilder4\Projects\;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item2=C:\Archivos de programa\Borland\CBuilder4\Projects\;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item3=C:\Archivos de programa\Borland\CBuilder4\Projects;C:\Archivos de programa\Borland\CBuilder4\Projects\;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item4=C:\Archivos de programa\Borland\CBuilder4\Projects;..\Libreria\formas\agenda;..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas;..\libreria\formasf\alarma;..\libreria\formas\alarma;c:\archivos de programa\borland\cbuilder3\projects\;..\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item6=..\libreria\formas\2d;..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas\;..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item7=..\libreria\formas\arbmemo;..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas\;..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item8=..\libreria\formas\pendient;..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas\;..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item9=..\libreria\formas\director;..\libreria\formas\directo;..\libreria\formas\direct;..\libreria\formas\direc;..\libreria\formas\dire;..\libreria\formas\dir;..\libreria\formas\di;..\libreria\formas\d;..\libreria\formas\;..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item10=..\libreria\formasf\alarma;..\libreria\formas\alarma;..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item11=..\libreria\formas;c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\lib\obj;$(BCB)\lib
+Item12=c:\archivos de programa\borland\cbuilder3\projects;..\libreria;d:\libreria;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=_IDIOMA_ESPANOL_
+Item1=_IDIOMA_ESPANOL_;USEPACKAGES
+Item2=_IDIOMA_ESPANOL_;_RTLDLL;USEPACKAGES
+Item3=_RTLDLL
+Item4=_RTLDLL;USEPACKAGES
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+InMemoryExe=0
+ShowInfoMsgs=1
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+!endif
+
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project file is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+
+!if !$d(IDL2CPP)
+IDL2CPP = idl2cpp
+!endif
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(IDLGENFILES) $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------
